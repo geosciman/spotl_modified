@@ -38,7 +38,8 @@ c                                   elastic tilt, e theta theta, e lam lam
      1 an/6.371e6/,cz/(0.,0.)/
       data close/0.0/,numnf/0/,nclose/0/
       an = 1./an
-c     读取nloadf函数命令行数据，分析是否有足够的参数变量
+c  getcl读取nloadf函数命令行数据，分析是否有足够的参数变量，否则程序自动退出，
+c  并显示错误。
       call getcl(stnam,rlat,rlam,ht,mdfile,grfile,modo,distm)
       ct = cos(dr*(90.-rlat))
       st = sin(dr*(90.-rlat))
@@ -53,6 +54,7 @@ c     读取nloadf函数命令行数据，分析是否有足够的参数变量
 c  convolutions start here - read in Green functions, which come in
 c  ntot sections; num is the current one, fingrd is whether or not to
 c  use the detailed land-sea grid
+c  读取格林函数文件
  3    call getgrf(grfile,num,ntot,nf,fingrd)
       stp = dr*spc
 c  if this is the first convolution interval see if (1) there is ocean at
