@@ -1,0 +1,11 @@
+Before running the install.comp script,
+be sure to modify the Makefile in /src
+to have the correct flags for your compilers (Fortran and C).
+modify the install.rest next.
+
+Documentation is in the /doc directory;
+see the README there for more information.
+
+Modified by CF at SWJTU
+This one is used for the modified of the spotl for gravity,
+especially for the nloadf.
