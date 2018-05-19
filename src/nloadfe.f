@@ -69,6 +69,8 @@ c        write(*,*) amp, beg
 	 if(amp.ne.cz.and.ht.lt.0) then
 	    del=dr*beg/2
             call ignewt(del,2*del,g,t,pot)
+c            elastic part getting by setting g=0.
+            g = 0
             grav = grav + g*amp*tpi
 	    close = 0.
 	    clat = rlat
@@ -85,6 +87,7 @@ c
       cd = cos(del)
       sd = sin(del)
       call ignewt(del,stp,g,t,pot)
+      g = 0
       g = g + grfn(ii,3)
       t = t + grfn(ii,4)
       pot = pot + grfn(ii,7)

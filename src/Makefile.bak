@@ -1,7 +1,7 @@
 # machine independent makefile
 # 
 
-all: ocst.a mapst.a nloadf nloadfe oclook loadcomb harprp hartid ertid mapcheck modcon mapcon polymake
+all: ocst.a mapst.a nloadf oclook loadcomb harprp hartid ertid mapcheck modcon mapcon polymake
 
 BIN = ../bin/
 
@@ -69,10 +69,6 @@ modcon: modcon.f
 
 nloadf: nloadf.f getcl.f ignewt.f getgrf.f lodout.f ldbxdr.f invspt.f seadens.f $(OCLIB) $(MAPLIB)
 	$(FTN) $(FFLAGS) nloadf.f getcl.f ignewt.f getgrf.f lodout.f ldbxdr.f seadens.f invspt.f $(OCLIB) $(MAPLIB) -o $(BIN)nloadf
-	rm -f *.o
-
-nloadfe: nloadfe.f getcl.f ignewt.f getgrf.f lodout.f ldbxdr.f invspt.f seadens.f $(OCLIB) $(MAPLIB)
-	$(FTN) $(FFLAGS) nloadfe.f getcl.f ignewt.f getgrf.f lodout.f ldbxdr.f seadens.f invspt.f $(OCLIB) $(MAPLIB) -o $(BIN)nloadfe
 	rm -f *.o
 
 oclook: oclook.f fndgde.f seadens.f $(OCLIB) $(MAPLIB)
